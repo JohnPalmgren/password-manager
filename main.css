@@ -1,0 +1,50 @@
+body {
+    background-color: #786af6;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 228, 196, 0.5);
+}
+
+h1 {
+    color: #fff;
+    margin: 1rem;
+    text-align: center;
+}
+
+/* h1 + label {
+    color: #fff
+} */
+
+.add-wrapper {
+    text-align: center;
+}
+
+.add-wrapper label {
+    color: #fff;
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
+.add-wrapper button {
+    width: 3rem;
+    height: 2rem;
+    vertical-align: middle;
+    /* border: none;
+    box-shadow: 5px 5px 5px #2c2c2c; */
+    margin-left: 0.6rem;
+    background-image: url("images/witch-hat.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.hidden {
+    display:none;
+}
