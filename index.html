@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wizard</title>
     <link rel="icon" type="image/png" href="images/witch-hat.png">
-    <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/5a60fe6182.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
     <div class="background hidden"></div>
@@ -46,11 +48,12 @@
             <label for="username">User Name</label>
             <input type="text" id="username" name="username">
             <label for="password">Password</label>
-            <input type="text" id="pasword" name="password">
+            <input type="password" id="password" name="password">
             <i class="fas fa-eye"></i>
-            <i class="fas fa-eye-slash hidden"></i>
+            <i class="hidden fas fa-eye-slash"></i>
             <button type="button">Generate a password</button>
             <button type="submit" disabled>Add</button>
+            <button type="button">Cancel</button>
         </form>
     </div>
     <ul></ul>
