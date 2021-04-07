@@ -33,7 +33,7 @@ h1 {
     vertical-align: middle;
 }
 
-.add-wrapper button {
+/* .add-wrapper button {
     width: 3rem;
     height: 2rem;
     vertical-align: middle;
@@ -43,6 +43,26 @@ h1 {
     background-position: center;
     background-size: contain;
     cursor: pointer;
+} */
+
+table {
+    width:90%;
+    background-color: #7dcfeb;
+    margin: 1rem;
+    table-layout: fixed;
+}
+
+th,
+td {
+    width: 30%;
+}
+
+td {
+    word-break: break-all;
+}
+
+tr {
+    padding: 0.5rem;
 }
 
 .pword-add {
@@ -68,6 +88,21 @@ h1 {
 .pword-add button:first-of-type {
     display: block;
 }
+
+#copy {
+    font-size: 0.8rem;
+}
+
+#td-wrapper {
+    display: flex;
+}
+
+.table-eye,
+.table-slash {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
 
 .hidden {
     display:none;
