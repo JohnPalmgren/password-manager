@@ -66,24 +66,46 @@
     </div>
     <div id="pword-generator" class="hidden">
         <form>
-            <label for="length">Length of Password</label>
-            <input type="number" value="20" id="length">
-            <label for="uppercase">Upper case (A,B,C ...)</label>
-            <input type="checkbox" id="uppercase">
-            <label for="lowercase">Lower case (a,b,c ...)</label>
-            <input type="checkbox" id="lowercase">
-            <label for="digits">Digits (1,2,3 ...)</label>
-            <input type="checkbox" id="digits">
-            <label for="minus">Minus (-)</label>
-            <input type="checkbox" id="minus">
-            <label for="underline">Underline (_)</label>
-            <input type="checkbox" id="underline">
-            <label for="space">Space ( )</label>
-            <input type="checkbox" id="space">
-            <label for="special">Special (%,^,& ...)</label>
-            <input type="checkbox" id="special">
-            <label for="brackets">Brackets(<>{}[]())</label>
-            <input type="checkbox" id="brackets">
+            <span>
+                <label for="length">Length of Password</label>
+                <input type="number" value="20" min="1" max="50" id="length">
+            </span>
+            <span>
+                <label for="uppercase">Upper case (A,B,C ...)</label>
+                <input type="checkbox" id="uppercase">
+            </span>
+            <span>
+                <label for="lowercase">Lower case (a,b,c ...)</label>
+                <input type="checkbox" id="lowercase">
+            </span>
+            <span>
+                <label for="digits">Digits (1,2,3 ...)</label>
+                <input type="checkbox" id="digits">
+            </span>
+            <span>
+                <label for="brackets">Brackets(<>{}[]())</label>
+                <input type="checkbox" id="brackets">
+            </span>
+            <span>
+                <label for="special">Special (%,^,& ...)</label>
+                <input type="checkbox" id="special">
+            </span>
+            <!-- <span>
+                <label for="minus">Minus (-)</label>
+                <input type="checkbox" id="minus">
+            </span>
+            <span>
+                <label for="underline">Underline (_)</label>
+                <input type="checkbox" id="underline">
+            </span> -->
+            <span>
+                <label for="space">Space ( )</label>
+                <input type="checkbox" id="space">
+            </span>
+            <div id="button-container">
+                <button type="button">Confirm</button>
+                <button type="button">Cancel</button>
+            </div>
         </form>
     </div>
     <div class="pword-add hidden">
@@ -96,7 +118,7 @@
             <input type="password" id="password" name="password">
             <i class="fas fa-eye"></i>
             <i class="hidden fas fa-eye-slash"></i>
-            <button type="button">Generate a password</button>
+            <button type="button" class="generator-btn">Generate a password</button>
             <button type="submit" disabled>Add</button>
             <button type="button">Cancel</button>
         </form>

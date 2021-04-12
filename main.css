@@ -66,13 +66,15 @@ tr {
 }
 
 .pword-add {
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
     background-color: #a1a1a1;
     z-index: 2;
     display: flex;
     padding: 2rem;
     width: 70%;
-    margin: auto;
     box-shadow: 6px 6px 5px;
 }
 
@@ -103,6 +105,42 @@ tr {
     margin-left: 0.5rem;
 }
 
+#pword-generator {
+    position: absolute;
+    width: 70%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 3;
+    background-color: #a1a1a1;
+    padding: 1rem;
+    box-shadow: 6px 6px 5px;
+}
+
+#pword-generator span {
+    display: block;
+}
+
+#pword-generator label {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
+}
+
+#length {
+    height: 1.5rem;
+}
+
+#button-container {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#pword-generator button {
+    width: 5rem;
+    height: 2.5rem;
+    font-family: inherit;
+}
 
 .hidden {
     display:none;

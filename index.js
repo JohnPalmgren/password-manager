@@ -4,12 +4,17 @@ const backdrop = document.querySelector(".background");
 const passwordModal = document.querySelector(".pword-add");
 const passwordModalCancelBtn = document.querySelector(".pword-add button:last-of-type");
 const eye = document.querySelector(".fa-eye");
-const eyeSlash = document.querySelector(".fa-eye-slash")
-const passwordEl = document.getElementById("password")
-const input = document.querySelectorAll(".pword-add input")
+const eyeSlash = document.querySelector(".fa-eye-slash");
+const passwordEl = document.getElementById("password");
+const input = document.querySelectorAll(".pword-add input");
 const submit = document.querySelector(".pword-add button[type='submit");
+const generatorBtn = document.querySelector(".generator-btn");
+const generatorModel = document.getElementById("pword-generator");
+const generatorCancel = document.querySelector("#button-container button:last-of-type")
+const generatorConfirm = document.querySelector("#button-container button:first-of-type")
 
-const classIdTracker = []
+//dont need this
+const classIdTracker = [];
 
 const addPasswordHandler = () => {
     passwordModal.classList.remove("hidden");
@@ -19,12 +24,20 @@ const addPasswordHandler = () => {
 const removePasswordHandler = () => {
     passwordModal.classList.add("hidden");
     backdrop.classList.add("hidden");
-    input.forEach(field => field.value = "")
+    input.forEach(field => field.value = "");
     submit.disabled = true;
+};
+
+const removeGeneratorHandler = () => {
+    const form = generatorModel.querySelector("form");
+    form.reset();
+    generatorModel.classList.add("hidden");
 };
 
 const backdropHandler = () => {
     removePasswordHandler();
+    removeGeneratorHandler();
+    backdrop.classList.add("hidden");
 };
 
 const passwordVisibilityHandler = () => {
@@ -104,6 +117,82 @@ const revealPasswordHandler = (id) => {
     }
 };
 
+const revealGenerator = () => {
+    generatorModel.classList.remove("hidden")
+};
+
+// need to make sure 0 can come up and top number (may need +1 after list length)
+const randomItemFromArray = list => {
+    const index = Math.floor(Math.random() * list.length);
+    return list[index];
+}
+
+const generatorLogic = () => {
+
+    const uppercaseBox = document.querySelector("form input[type='checkbox']:first-of-type")
+    const lowercaseBox = uppercaseBox.parentElement.nextElementSibling.lastChild.previousSibling;
+    const numberBox = lowercaseBox.parentElement.nextElementSibling.lastChild.previousSibling;
+    const bracketBox = numberBox.parentElement.nextElementSibling.lastChild.previousSibling;
+    const specialBox = bracketBox.parentElement.nextElementSibling.lastChild.previousSibling;
+    const spaceBox = specialBox.parentElement.nextElementSibling.lastChild.previousSibling;
+    const length = document.getElementById("length").value;
+    
+    const passwordList = [];
+    const selectedFields = {}
+      
+    const uppercase = Array.from("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    const lowercase = Array.from("abcdefghijklmnopqrstuvwxyz");
+    const number = Array.from("0123456789");
+    const brackets = Array.from("<>[]{}()");
+    const special = Array.from("!\"#$%&'*+,.\\/:;=?@^`|~-_")
+    const space = [" "];
+
+    let password = ""
+    let totalCharacters = 0;
+
+    if (uppercaseBox.checked) {
+        totalCharacters += 26;
+        selectedFields.uppercase = [totalCharacters, uppercase];
+    } if (lowercaseBox.checked) {
+        totalCharacters += 26;
+        selectedFields.lowercase = [totalCharacters, lowercase];
+    } if (numberBox.checked) {
+        totalCharacters += 10;
+        selectedFields.number = [totalCharacters, number];
+    } if (bracketBox.checked) {
+        totalCharacters += 8;
+        selectedFields.brackets = [totalCharacters, brackets];
+    } if (specialBox.checked) {
+        totalCharacters += 24;
+        selectedFields.special = [totalCharacters, special];
+    } if (spaceBox.checked) {
+        totalCharacters += 1;
+        selectedFields.space = [totalCharacters, space];
+    };
+
+    for (let i = 0; i < length; i++) {
+        const selector = Math.floor(Math.random() * totalCharacters +1);
+        for (let field in selectedFields) {
+            if (selector <= selectedFields[field][0]) {
+                passwordList.push(randomItemFromArray(selectedFields[field][1]));
+                break;
+            };
+        };
+    };
+
+    for (const char of passwordList) {
+        password += char
+    }
+    console.log(password);
+    return password;
+};
+
+const generatePasswordHandler = () => {
+    const password = generatorLogic();
+    passwordEl.value = password;
+    removeGeneratorHandler();
+}
+
 
 addbtn.addEventListener("click", addPasswordHandler);
 passwordModalCancelBtn.addEventListener("click", removePasswordHandler);
@@ -114,3 +203,6 @@ input.forEach(field => {
     field.addEventListener("keyup", enableAddButtonHandler);
 });
 submit.addEventListener("click", addTableRow);
+generatorBtn.addEventListener("click", revealGenerator);
+generatorCancel.addEventListener("click", removeGeneratorHandler);
+generatorConfirm.addEventListener("click", generatePasswordHandler);
