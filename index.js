@@ -84,6 +84,7 @@ const addTableRow = () => {
             <div id="td-wrapper" class="${randomString}">
                 <span class="hidden text-password">${password}</span>
                 <span class="hidden-password">********</span>
+                <input class="hidden password-input-box" value="${password}">
                 <i class="fas fa-eye table-eye"></i>
                 <i class="hidden fas fa-eye-slash table-slash"></i>
             </div>
@@ -92,8 +93,10 @@ const addTableRow = () => {
     `;
     const eye = document.querySelector(".table-eye")
     const eyeSlash = document.querySelector(".table-slash")
+    const copyBtn = document.getElementById("copy")
     eye.addEventListener("click", revealPasswordHandler.bind(self, randomString))
     eyeSlash.addEventListener("click", revealPasswordHandler.bind(self, randomString))
+    copyBtn.addEventListener("click", copyPasswordHandler.bind(self, randomString))
     classIdTracker.push(randomString);
     removePasswordHandler();
 };
@@ -114,7 +117,17 @@ const revealPasswordHandler = (id) => {
         hiddenPwrd.classList.remove("hidden")
         eyeTable.classList.remove("hidden")
         eyeTableSlash.classList.add("hidden");
-    }
+    };
+};
+
+const copyPasswordHandler = (id) => {
+    const tdWrapper = document.querySelector("."+id);
+    const password = tdWrapper.querySelector(".password-input-box");
+    password.classList.remove("hidden");
+    password.select();
+    password.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    password.classList.add("hidden");
 };
 
 const revealGenerator = () => {
@@ -150,6 +163,8 @@ const generatorLogic = () => {
     let password = ""
     let totalCharacters = 0;
 
+
+    // use switch case??
     if (uppercaseBox.checked) {
         totalCharacters += 26;
         selectedFields.uppercase = [totalCharacters, uppercase];
@@ -183,13 +198,13 @@ const generatorLogic = () => {
     for (const char of passwordList) {
         password += char
     }
-    console.log(password);
     return password;
 };
 
 const generatePasswordHandler = () => {
     const password = generatorLogic();
     passwordEl.value = password;
+    enableAddButtonHandler();
     removeGeneratorHandler();
 }
 

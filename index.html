@@ -1,137 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wizard</title>
-    <link rel="icon" type="image/png" href="images/witch-hat.png">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <script src="https://kit.fontawesome.com/5a60fe6182.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/png" href="images/witch-hat.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script
+      src="https://kit.fontawesome.com/5a60fe6182.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
     <script src="index.js" defer></script>
-</head>
-<body>
-    <div class="background hidden"></div>
-    <h1>Wizard Password Manager</h1>
-    <div class="add-wrapper">
-        <label for="add">Add a password</label>
-        <button id="add">
+  </head>
+  <body>
+    <div id="page-container">
+      <div id="content-wrap">
+        <div class="background hidden"></div>
+        <h1>Wizard Password Manager</h1>
+        <div class="add-wrapper">
+          <label for="add">Add a password</label>
+          <button id="add">
             <?xml version="1.0"?>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="22" height="22" x="0" y="0" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(-1,0,0,1,512.0007514953613,0)">
-            <g xmlns="http://www.w3.org/2000/svg">
-                <path style="" d="M162.74,70.914c-4.142,0-7.5-3.358-7.5-7.5V7.5c0-4.142,3.358-7.5,7.5-7.5   c4.142,0,7.5,3.358,7.5,7.5v55.914C170.24,67.556,166.882,70.914,162.74,70.914z" fill="#ff210b" data-original="#cccccc" class=""/>
-                <path style="" d="M162.74,323.997c-4.142,0-7.5-3.358-7.5-7.5v-55.914c0-4.142,3.358-7.5,7.5-7.5   c4.142,0,7.5,3.358,7.5,7.5v55.914C170.24,320.639,166.882,323.997,162.74,323.997z" fill="#ff210b" data-original="#cccccc" class=""/>
-                <path style="" d="M93.029,99.788c-1.919,0-3.839-0.732-5.303-2.197L48.189,58.055c-2.929-2.929-2.929-7.677,0-10.606   c2.929-2.929,7.678-2.929,10.606,0l39.537,39.537c2.929,2.929,2.929,7.677,0,10.606C96.868,99.056,94.949,99.788,93.029,99.788z" fill="#ff210b" data-original="#cccccc" class=""/>
-                <path style="" d="M64.154,169.499H8.24c-4.142,0-7.5-3.358-7.5-7.5s3.358-7.5,7.5-7.5h55.914   c4.142,0,7.5,3.358,7.5,7.5S68.296,169.499,64.154,169.499z" fill="#ff210b" data-original="#cccccc" class=""/>
-                <path style="" d="M317.238,169.499h-55.914c-4.142,0-7.5-3.358-7.5-7.5s3.358-7.5,7.5-7.5h55.914   c4.142,0,7.5,3.358,7.5,7.5S321.38,169.499,317.238,169.499z" fill="#ff210b" data-original="#cccccc" class=""/>
-                <path style="" d="M53.492,278.745c-1.919,0-3.839-0.732-5.303-2.197c-2.929-2.929-2.929-7.678,0-10.606l39.537-39.537   c2.929-2.929,7.678-2.929,10.606,0c2.929,2.929,2.929,7.678,0,10.606l-39.537,39.537C57.331,278.013,55.412,278.745,53.492,278.745   z" fill="#ff210b" data-original="#cccccc" class=""/>
-                <path style="" d="M232.449,99.788c-1.919,0-3.839-0.732-5.303-2.197c-2.929-2.929-2.929-7.677,0-10.606l39.537-39.537   c2.929-2.929,7.678-2.929,10.606,0c2.929,2.929,2.929,7.677,0,10.606l-39.537,39.537C236.288,99.056,234.369,99.788,232.449,99.788   z" fill="#ff210b" data-original="#cccccc" class=""/>
-            </g>
-            <path xmlns="http://www.w3.org/2000/svg" style="" d="M507.45,491.63l-16.56,16.56c-5.081,5.081-13.319,5.081-18.4,0L209.378,245.078v-0.013v-33.063  l34.96-1.884L507.45,473.229C512.531,478.311,512.531,486.549,507.45,491.63z" fill="#000000" data-original="#a6e2e3" class=""/>
-            <path xmlns="http://www.w3.org/2000/svg" style="" d="M244.338,210.118l-34.96,34.947v0.013l-61.645-61.645c-9.654-9.654-9.654-25.306,0-34.96  c4.827-4.827,11.15-7.247,17.473-7.247c6.336,0,12.659,2.42,17.486,7.247L244.338,210.118z" fill="#ffa638" data-original="#ffa638"/>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            <g xmlns="http://www.w3.org/2000/svg">
-            </g>
-            </g></svg>
-        </button>
-    </div>
-    <div id="pword-generator" class="hidden">
-        <form>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns:svgjs="http://svgjs.com/svgjs"
+              version="1.1"
+              width="17"
+              height="17"
+              x="0"
+              y="0"
+              viewBox="0 0 512.001 512.001"
+              style="enable-background: new 0 0 512 512"
+              xml:space="preserve"
+              class=""
+            >
+              <g transform="matrix(-1,0,0,1,512.0007514953613,0)">
+                <g xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    style=""
+                    d="M162.74,70.914c-4.142,0-7.5-3.358-7.5-7.5V7.5c0-4.142,3.358-7.5,7.5-7.5   c4.142,0,7.5,3.358,7.5,7.5v55.914C170.24,67.556,166.882,70.914,162.74,70.914z"
+                    fill="#ff210b"
+                    data-original="#cccccc"
+                    class=""
+                  />
+                  <path
+                    style=""
+                    d="M162.74,323.997c-4.142,0-7.5-3.358-7.5-7.5v-55.914c0-4.142,3.358-7.5,7.5-7.5   c4.142,0,7.5,3.358,7.5,7.5v55.914C170.24,320.639,166.882,323.997,162.74,323.997z"
+                    fill="#ff210b"
+                    data-original="#cccccc"
+                    class=""
+                  />
+                  <path
+                    style=""
+                    d="M93.029,99.788c-1.919,0-3.839-0.732-5.303-2.197L48.189,58.055c-2.929-2.929-2.929-7.677,0-10.606   c2.929-2.929,7.678-2.929,10.606,0l39.537,39.537c2.929,2.929,2.929,7.677,0,10.606C96.868,99.056,94.949,99.788,93.029,99.788z"
+                    fill="#ff210b"
+                    data-original="#cccccc"
+                    class=""
+                  />
+                  <path
+                    style=""
+                    d="M64.154,169.499H8.24c-4.142,0-7.5-3.358-7.5-7.5s3.358-7.5,7.5-7.5h55.914   c4.142,0,7.5,3.358,7.5,7.5S68.296,169.499,64.154,169.499z"
+                    fill="#ff210b"
+                    data-original="#cccccc"
+                    class=""
+                  />
+                  <path
+                    style=""
+                    d="M317.238,169.499h-55.914c-4.142,0-7.5-3.358-7.5-7.5s3.358-7.5,7.5-7.5h55.914   c4.142,0,7.5,3.358,7.5,7.5S321.38,169.499,317.238,169.499z"
+                    fill="#ff210b"
+                    data-original="#cccccc"
+                    class=""
+                  />
+                  <path
+                    style=""
+                    d="M53.492,278.745c-1.919,0-3.839-0.732-5.303-2.197c-2.929-2.929-2.929-7.678,0-10.606l39.537-39.537   c2.929-2.929,7.678-2.929,10.606,0c2.929,2.929,2.929,7.678,0,10.606l-39.537,39.537C57.331,278.013,55.412,278.745,53.492,278.745   z"
+                    fill="#ff210b"
+                    data-original="#cccccc"
+                    class=""
+                  />
+                  <path
+                    style=""
+                    d="M232.449,99.788c-1.919,0-3.839-0.732-5.303-2.197c-2.929-2.929-2.929-7.677,0-10.606l39.537-39.537   c2.929-2.929,7.678-2.929,10.606,0c2.929,2.929,2.929,7.677,0,10.606l-39.537,39.537C236.288,99.056,234.369,99.788,232.449,99.788   z"
+                    fill="#ff210b"
+                    data-original="#cccccc"
+                    class=""
+                  />
+                </g>
+                <path
+                  xmlns="http://www.w3.org/2000/svg"
+                  style=""
+                  d="M507.45,491.63l-16.56,16.56c-5.081,5.081-13.319,5.081-18.4,0L209.378,245.078v-0.013v-33.063  l34.96-1.884L507.45,473.229C512.531,478.311,512.531,486.549,507.45,491.63z"
+                  fill="#000000"
+                  data-original="#a6e2e3"
+                  class=""
+                />
+                <path
+                  xmlns="http://www.w3.org/2000/svg"
+                  style=""
+                  d="M244.338,210.118l-34.96,34.947v0.013l-61.645-61.645c-9.654-9.654-9.654-25.306,0-34.96  c4.827-4.827,11.15-7.247,17.473-7.247c6.336,0,12.659,2.42,17.486,7.247L244.338,210.118z"
+                  fill="#ffa638"
+                  data-original="#ffa638"
+                />
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+                <g xmlns="http://www.w3.org/2000/svg"></g>
+              </g>
+            </svg>
+          </button>
+        </div>
+        <div id="pword-generator" class="hidden">
+          <form>
             <span>
-                <label for="length">Length of Password</label>
-                <input type="number" value="20" min="1" max="50" id="length">
+              <label for="length">Length of Password</label>
+              <input type="number" value="20" min="1" max="50" id="length" />
             </span>
             <span>
-                <label for="uppercase">Upper case (A,B,C ...)</label>
-                <input type="checkbox" id="uppercase">
+              <label for="uppercase">Upper case (A,B,C ...)</label>
+              <input type="checkbox" id="uppercase" />
             </span>
             <span>
-                <label for="lowercase">Lower case (a,b,c ...)</label>
-                <input type="checkbox" id="lowercase">
+              <label for="lowercase">Lower case (a,b,c ...)</label>
+              <input type="checkbox" id="lowercase" />
             </span>
             <span>
-                <label for="digits">Digits (1,2,3 ...)</label>
-                <input type="checkbox" id="digits">
+              <label for="digits">Digits (1,2,3 ...)</label>
+              <input type="checkbox" id="digits" />
             </span>
             <span>
-                <label for="brackets">Brackets(<>{}[]())</label>
-                <input type="checkbox" id="brackets">
+              <label for="brackets">Brackets(<>{}[]())</label>
+              <input type="checkbox" id="brackets" />
             </span>
             <span>
-                <label for="special">Special (%,^,& ...)</label>
-                <input type="checkbox" id="special">
-            </span>
-            <!-- <span>
-                <label for="minus">Minus (-)</label>
-                <input type="checkbox" id="minus">
+              <label for="special">Special (%,^,& ...)</label>
+              <input type="checkbox" id="special" />
             </span>
             <span>
-                <label for="underline">Underline (_)</label>
-                <input type="checkbox" id="underline">
-            </span> -->
-            <span>
-                <label for="space">Space ( )</label>
-                <input type="checkbox" id="space">
+              <label for="space">Space ( )</label>
+              <input type="checkbox" id="space" />
             </span>
             <div id="button-container">
-                <button type="button">Confirm</button>
-                <button type="button">Cancel</button>
+              <button type="button">Confirm</button>
+              <button type="button">Cancel</button>
             </div>
-        </form>
-    </div>
-    <div class="pword-add hidden">
-        <form>
+          </form>
+        </div>
+        <div class="pword-add hidden">
+          <form>
             <label for="title">Title</label>
-            <input type="text" id="title" name="title">
+            <input type="text" id="title" name="title" />
             <label for="username">User Name</label>
-            <input type="text" id="username" name="username">
+            <input type="text" id="username" name="username" />
             <label for="password">Password</label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password" />
             <i class="fas fa-eye"></i>
             <i class="hidden fas fa-eye-slash"></i>
-            <button type="button" class="generator-btn">Generate a password</button>
+            <button type="button" class="generator-btn">
+              Generate a password
+            </button>
             <button type="submit" disabled>Add</button>
             <button type="button">Cancel</button>
-        </form>
-    </div>
-    <table>
-        <tr>
+          </form>
+        </div>
+        <table>
+          <tr>
             <th>Title</th>
             <th>Username</th>
             <th>password</th>
-        </tr>
-    </table>
-
-    
-
-</body>
+          </tr>
+        </table>
+      </div>
+      <footer>
+        <div>
+          Icons made by
+          <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
+          <a href="https://www.flaticon.com/" title="Flaticon"
+            >www.flaticon.com</a
+          >
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
