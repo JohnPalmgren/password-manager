@@ -1,166 +1,204 @@
 body {
-    background-color: #786af6;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
+  background-color: #786af6;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
 }
 
 .background {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(255, 228, 196, 0.5);
-    z-index: 1;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 228, 196, 0.5);
+  z-index: 1;
 }
 
 h1 {
-    color: #fff;
-    text-align: center;
-    padding-top: 1rem;
-    margin: 0 1rem 0;
+  color: #fff;
+  text-align: center;
+  padding-top: 1rem;
+  margin: 0 1rem 0;
 }
 
 .add-wrapper {
-    text-align: center;
-    margin-top: 0.8rem;
+  text-align: center;
+  margin-top: 0.8rem;
 }
 
 .add-wrapper label {
-    color: #fff;
-    font-size: 1.3rem;
-    vertical-align: middle;
+  color: #fff;
+  font-size: 1.3rem;
+  vertical-align: middle;
 }
 
 #add {
-    vertical-align: middle;
-    box-shadow: 4px 4px 5px #000;
-    border-radius: 5px; 
-    margin-left: 0.5rem;
-    padding: 0.2rem 1rem 0.2rem 1rem;
+  vertical-align: middle;
+  box-shadow: 4px 4px 5px #000;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  padding: 0.2rem 1rem 0.2rem 1rem;
 }
 
 table {
-    width:90%;
-    background-color: #7dcfeb;
-    margin: 1rem;
-    table-layout: fixed;
+  width: 90%;
+  background-color: #7dcfeb;
+  margin: 1rem auto;
+  table-layout: fixed;
 }
 
 th,
 td {
-    width: 30%;
+  width: 30%;
 }
 
 td {
-    word-break: break-all;
+  word-break: break-all;
 }
 
 tr {
-    padding: 0.5rem;
+  padding: 0.5rem;
 }
 
 tr:nth-child(even) {
-    background-color: #31c0f0;
+  background-color: #31c0f0;
 }
 
-table, 
+table,
 td {
-    border: 1px solid #808080;
-    border-collapse: collapse;
+  border: 1px solid #808080;
+  border-collapse: collapse;
 }
 
 #td-wrapper {
-    padding-top: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 .pword-add {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: #a1a1a1;
-    z-index: 2;
-    display: flex;
-    padding: 2rem;
-    width: 70%;
-    box-shadow: 6px 6px 5px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #a1a1a1;
+  z-index: 2;
+  padding: 2rem;
+  width: 70%;
+  box-shadow: 6px 6px 5px;
+}
+
+.pword-add-backdrop {
+  z-index: 3;
 }
 
 .pword-add label {
-    display: block;
-    margin: 0.5rem;
+  display: block;
+  margin: 0.5rem;
 }
 
 .pword-add button {
-    margin: 0.5rem;
+  margin: 0.5rem;
 }
 
 .pword-add button:first-of-type {
-    display: block;
+  display: block;
 }
 
 #copy {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 #td-wrapper {
-    display: flex;
+  display: flex;
 }
 
 .table-eye,
 .table-slash {
-    font-size: 0.8rem;
-    margin-left: 0.5rem;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
 }
 
 #pword-generator {
-    position: absolute;
-    width: 70%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 3;
-    background-color: #a1a1a1;
-    padding: 1rem;
-    box-shadow: 6px 6px 5px;
+  position: absolute;
+  width: 70%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 3;
+  background-color: #a1a1a1;
+  padding: 1rem;
+  box-shadow: 6px 6px 5px;
 }
 
 #pword-generator span {
-    display: block;
+  display: block;
 }
 
 #pword-generator label {
-    display: inline-block;
-    font-size: 1.2rem;
-    padding-top: 0.5rem;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
 }
 
 #length {
-    height: 1.5rem;
+  height: 1.5rem;
+  width: auto;
 }
 
 #button-container {
-    text-align: center;
-    margin-top: 1rem;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 #pword-generator button {
-    width: 5rem;
-    height: 2.5rem;
-    font-family: inherit;
+  width: 5rem;
+  height: 2.5rem;
+  font-family: inherit;
 }
 
 .hidden {
-    display:none;
+  display: none;
 }
 
 footer {
-    position: absolute;
-    box-sizing: border-box;
-    bottom: 0;
-    width: 100%;
-    background-color: #d9d9f7;
-    font-size: 0.5rem;
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 0;
+  width: 100%;
+  background-color: #d9d9f7;
+  font-size: 0.5rem;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 30rem) {
+  .pword-add {
+    width: 50%;
     text-align: center;
-    padding: 0.5rem;
-    margin-top: 1rem;
+  }
+
+  .pword-add button:first-of-type {
+    margin: 0.5rem auto;
+  }
+
+  #pword-generator span:first-of-type {
+    display: block;
+  }
+
+  #pword-generator span {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 48rem) {
+  table {
+    max-width: 53rem;
+  }
+  footer {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 72rem) {
+  #pword-generator {
+    width: max-content;
+  }
 }
